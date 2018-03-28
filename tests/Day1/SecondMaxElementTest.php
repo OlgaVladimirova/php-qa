@@ -15,15 +15,15 @@ class SecondMaxElementTest extends TestCase{
     }
 
     public function test_get_second_element_for_1(){
-        $this->assertEquals("In the array there is no second maximum element", $this->secondMaxElenemt->getSecond([1]));
+        $this->assertEquals("There is no second maximum element", $this->secondMaxElenemt->getSecond([1]));
     }
 
     public function test_get_second_element_for_empty(){
-        $this->assertEquals("In the array there is no second maximum element", $this->secondMaxElenemt->getSecond([]));
+        $this->assertEquals("There is no second maximum element", $this->secondMaxElenemt->getSecond([]));
     }
 
     public function test_get_second_element_dublicate(){
-        $this->assertEquals("In the array there is no second maximum element", $this->secondMaxElenemt->getSecond([1,1]));
+        $this->assertEquals("There is no second maximum element", $this->secondMaxElenemt->getSecond([1,1]));
     }
 
     public function test_get_second_element_3(){
@@ -39,6 +39,10 @@ class SecondMaxElementTest extends TestCase{
     }
 
     public function test_get_second_element_string(){
-        $this->assertEquals(-1, $this->secondMaxElenemt->getSecond([-4,2,-1,-7]));
+        $this->assertEquals( "There is no second maximum element", $this->secondMaxElenemt->getSecond(["abn","lki","iueiuw","om"]));
+    }
+
+    public function test_get_second_element_mix(){
+        $this->assertEquals( "There is no second maximum element", $this->secondMaxElenemt->getSecond([4,0.1,"iueiuw",-9]));
     }
 }
