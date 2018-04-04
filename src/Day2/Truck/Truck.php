@@ -2,35 +2,34 @@
 
 namespace Day2\Truck;
 
+
+// Не доделано.
 class Truck{
 
-    public function number_of_trips($count)
+    public function number_of_trips($array)
     {
+        $count = count($array);
+
         if ($count == 1) {
             return 1;
         }
 
-        $array = array();
-        for ($i = 0; $i < $count; $i++) {
-            $array[] = rand(1, 20000);
-        }
-
         asort($array);
 
-        $number = 0;
-        $sum = $array[$count];
+        $truck = 0;
+        $sum = $array[$count-1];
 
-        for ($i = 0; $i < $count; $i ++){
+        for ($i = 0; $i < $count; $i++) {
 
-            for ($j = 0; $j <=  30000; $j++) {
-                $sum += $array[$j];
-                unset($array[$j]);
+            while (($sum + $array[$i]) <= 30000){
+                $sum += $array[$i];
+                unset($array[$i]);
+                 $i ++;
             }
-            $sum = $array[$count-$i-1];
-            $number ++;
-            return $number;
-        }
 
-        return 3;
+            $truck ++;
+            $sum = [$count-$i-1];
+        }
+        return $truck;
     }
 }

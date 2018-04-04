@@ -28,7 +28,9 @@ class MaxStringTest extends TestCase{
         return[
             'max_string_a' => ["a","a"],
             'max_string_empty_string' => ["",""],
-            'max_string_abbbb' => ["abbbb","anj gfhk abbbb j"]
+            'max_string_abbbb' => ["abbbb","anj gfhk abbbb j"],
+            'max_string_duplicates' => ["ab", "ab ab"],
+            'max_string_123' => [123, 123]
         ];
     }
 
